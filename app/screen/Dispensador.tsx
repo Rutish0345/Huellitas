@@ -6,13 +6,10 @@ import Footer from '../Components/Footer';
 const ControlDispensadorScreen = () => {
   const [estadoComida, setEstadoComida] = useState(false);
   const [estadoAgua, setEstadoAgua] = useState(false);
-  
-  // Animaciones
   const animacionComida = useRef(new Animated.Value(0)).current;
   const animacionAgua = useRef(new Animated.Value(0)).current;
 
   const toggleComida = () => {
-    Vibration.vibrate(100); // Vibración breve
     setEstadoComida(!estadoComida);
     Animated.timing(animacionComida, {
       toValue: estadoComida ? 0 : 1,
@@ -22,7 +19,6 @@ const ControlDispensadorScreen = () => {
   };
 
   const toggleAgua = () => {
-    Vibration.vibrate(100);
     setEstadoAgua(!estadoAgua);
     Animated.timing(animacionAgua, {
       toValue: estadoAgua ? 0 : 1,
@@ -36,7 +32,7 @@ const ControlDispensadorScreen = () => {
       <Header titulo="Control del Dispensador" />
 
       <View style={styles.contenido}>
-        {/* Sección de Comida */}
+        {}
         <View style={styles.tarjeta}>
           <Text style={styles.titulo}>Comida</Text>
           <Animated.View style={[
@@ -54,7 +50,7 @@ const ControlDispensadorScreen = () => {
           </TouchableOpacity>
         </View>
 
-        {/* Sección de Agua */}
+        {}
         <View style={styles.tarjeta}>
           <Text style={styles.titulo}>Agua</Text>
           <Animated.View style={[
